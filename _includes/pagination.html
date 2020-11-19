@@ -1,4 +1,4 @@
-{% if pagination.pageNumber > 1 %}
+{% if pagination.items > 1 %}
 <nav aria-label="Blog page naviation">
   <ul class="pagination pagination-lg justify-content-center">
     <li class="page-item {% unless pagination.href.previous %}disabled{% endunless %}">
