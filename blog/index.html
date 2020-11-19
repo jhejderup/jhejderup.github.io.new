@@ -2,7 +2,7 @@
 layout: default
 pagination:
   data: collections.posts
-  size: 3
+  size: 5
   alias: posts
   reverse: true
 permalink: "blog/{% if pagination.pageNumber > 0 %}page{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
@@ -17,7 +17,7 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page{{ pagination.pageNumber 
 
 
   <ul class="post-list">
-    {% for post in collections.posts %}
+    {% for post in posts %}
       <li>
         <h3><a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
         <p class="post-meta">{{ post.date | readableDate }}</p>
@@ -26,6 +26,22 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page{{ pagination.pageNumber 
     {% endfor %}
   </ul>
 
-  {% include pagination.html %}
+  {% if pagination.items.size > 0 %}
+  <nav aria-label="Blog page naviation">
+    <ul class="pagination pagination-lg justify-content-center">
+      <li class="page-item {% unless pagination.href.previous %}disabled{% endunless %}">
+        <a class="page-link" href="{{ pagination.href.previous | url }}" tabindex="-1" aria-disabled="{{ pagination.href.previous }}">Newer</a>
+      </li>
+      {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+          <li class="page-item {% if page.url == trail.path %}active{% endif %}"><a class="page-link" href="{{ trail.path | relative_url }}" title="{{trail.title}}">{{ trail.num }}</a></li>
+        {% endfor %}
+      {% endif %}
+      <li class="page-item {% unless paginator.next_page %}disabled{% endunless %}">
+        <a class="page-link" href="{{ pagination.href.next | url }}">Older</a>
+      </li>
+    </ul>
+  </nav>
+  {% endif %}
 
 </div>
