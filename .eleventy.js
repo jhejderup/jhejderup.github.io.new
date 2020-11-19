@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig) {
 
 
     eleventyConfig.addCollection('news', collection => {
-      return collection.getFilteredByGlob('_news/*.md');
+      return collection.getFilteredByGlob('_news/*.md').reverse();
     });
     
     eleventyConfig.addCollection('projects', collection => {
