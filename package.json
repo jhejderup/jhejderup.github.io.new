@@ -2,10 +2,20 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
+    "@selfisekai/gulp-sass": "^4.2.0",
     "eleventy-plugin-date": "^1.0.0",
     "eleventy-plugin-embed-everything": "^1.9.4",
     "etag": "^1.8.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssnano": "^1.1.0",
     "markdown-it": "^10.0.0",
-    "markdown-it-emoji": "^2.0.0"
-  }
+    "markdown-it-emoji": "^2.0.0",
+    "node-sass": "^5.0.0"
+  },
+  "scripts": {
+    "dev": "gulp build && gulp watch && eleventy --serve",
+    "build": "gulp build && eleventy"
+  },
+  "name": "al-folio"
 }

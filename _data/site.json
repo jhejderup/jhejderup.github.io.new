@@ -9,6 +9,7 @@
     "url": null,
     "news": true,
     "news_limit": 3,
+    "highlight_theme": "vim",
     "baseurl": "/al-folio",
     "last_updated": false,
     "navbar_fixed": true,
