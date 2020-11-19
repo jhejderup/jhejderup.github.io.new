@@ -24,7 +24,7 @@
         <ul class="navbar-nav ml-auto flex-nowrap">
           <!-- About -->
           <li class="nav-item {% if title == 'about' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
+            <a class="nav-link" href="{{ '/' | url }}">
               about
               {% if title == "about" %}
                 <span class="sr-only">(current)</span>
@@ -34,7 +34,7 @@
           {% if site.blog_name %}
           <!-- Blog -->
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/blog/' | relative_url }}">
+            <a class="nav-link" href="{{ '/blog/' | url }}">
               blog
               {% if title == "blog" %}
               <span class="sr-only">(current)</span>
@@ -43,12 +43,12 @@
           </li>
           {% endif %}
           <!-- Other pages -->
-          {% for p in site.pages %}
-          {% if p.nav and p.autogen == nil %}
-          <li class="nav-item {% if title == p.title %}active{% endif %}">
-              <a class="nav-link" href="{{ p.url | relative_url }}">
-                {{ p.title }}
-                {% if title == p.title %}
+          {% for page in collections.pages %}
+          {% if page.data.nav and page.data.autogen == nil %}
+          <li class="nav-item {% if title == page.data.title %}active{% endif %}">
+              <a class="nav-link" href="{{ page.url | url }}">
+                {{ page.data.title }}
+                {% if title == page.data.title %}
                 <span class="sr-only">(current)</span>
                 {% endif %}
               </a>

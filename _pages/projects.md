@@ -14,11 +14,11 @@ nav: true
     {% if project.redirect %}
     <a href="{{ project.redirect }}" target="_blank">
     {% else %}
-    <a href="{{ project.url | relative_url }}">
+    <a href="{{ project.url | url }}">
     {% endif %}
       <div class="card hoverable">
         {% if project.img %}
-        <img src="{{ project.img | relative_url }}" alt="project thumbnail">
+        <img src="{{ project.img | url }}" alt="project thumbnail">
         {% endif %}
         <div class="card-body">
           <h2 class="card-title text-lowercase">{{ project.title }}</h2>

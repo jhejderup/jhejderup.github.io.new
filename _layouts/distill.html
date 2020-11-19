@@ -3,8 +3,8 @@
   <head>
     {% include head.html %}
     {% include scripts/mathjax.html %}
-    <script src="{{ '/assets/js/distillpub/template.v2.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/distillpub/transforms.v2.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/distillpub/template.v2.js' | url }}"></script>
+    <script src="{{ '/assets/js/distillpub/transforms.v2.js' | url }}"></script>
     {% if page._styles %}
     <style type="text/css">
       {{ page._styles }}
@@ -82,7 +82,7 @@
 
   </body>
 
-  <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}">
+  <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | url }}">
   </d-bibliography>
 
 </html>

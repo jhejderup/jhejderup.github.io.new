@@ -2,6 +2,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
-    "eleventy-plugin-embed-everything": "^1.9.4"
+    "eleventy-plugin-date": "^1.0.0",
+    "eleventy-plugin-embed-everything": "^1.9.4",
+    "etag": "^1.8.1",
+    "markdown-it": "^10.0.0",
+    "markdown-it-emoji": "^2.0.0"
   }
 }

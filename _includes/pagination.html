@@ -2,15 +2,15 @@
 <nav aria-label="Blog page naviation">
   <ul class="pagination pagination-lg justify-content-center">
     <li class="page-item {% unless pagination.href.previous %}disabled{% endunless %}">
-      <a class="page-link" href="{{ pagination.href.previous | relative_url }}" tabindex="-1" aria-disabled="{{ pagination.href.previous }}">Newer</a>
+      <a class="page-link" href="{{ pagination.href.previous | url }}" tabindex="-1" aria-disabled="{{ pagination.href.previous }}">Newer</a>
     </li>
     <!-- {% if paginator.page_trail %}
       {% for trail in paginator.page_trail %}
-        <li class="page-item {% if page.url == trail.path %}active{% endif %}"><a class="page-link" href="{{ trail.path | relative_url }}" title="{{trail.title}}">{{ trail.num }}</a></li>
+        <li class="page-item {% if page.url == trail.path %}active{% endif %}"><a class="page-link" href="{{ trail.path | url }}" title="{{trail.title}}">{{ trail.num }}</a></li>
       {% endfor %}
     {% endif %} -->
     <li class="page-item {% unless pagination.href.next %}disabled{% endunless %}">
-      <a class="page-link" href="{{ pagination.href.next | relative_url }}">Older</a>
+      <a class="page-link" href="{{ pagination.href.next | url }}">Older</a>
     </li>
   </ul>
 </nav>

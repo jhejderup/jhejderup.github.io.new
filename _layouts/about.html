@@ -8,18 +8,18 @@ layout: default
     <h1 class="post-title">
      {% if site.title == blank %}{{ site.title }}{% else %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% endif %}
     </h1>
-     <p class="desc">{{ page.description }}</p>
+     <p class="desc">{{ description }}</p>
   </header>
 
   <article>
-    {% if page.profile %}
-    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-      {% if page.profile.image %}
-        <img class="img-fluid z-depth-1 rounded" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
+    {% if profile %}
+    <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if profile.image %}
+        <img class="img-fluid z-depth-1 rounded" src="{{ profile.image | prepend: '/assets/img/' | url}}">
       {% endif %}
-      {% if page.profile.address %}
+      {% if profile.address %}
         <div class="address">
-          {{ page.profile.address }}
+          {{ profile.address }}
         </div>
       {% endif %}
     </div>
@@ -29,15 +29,11 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.news %}
+    {% if news %}
       {% include news.html %}
     {% endif %}
 
-    {% if page.selected_papers %}
-      {% include selected_papers.html %}
-    {% endif %}
-
-    {% if page.social %}
+    {% if social %}
     <div class="social">
       {% include social.html %}
       <div class="contact-note">{{ site.contact_note }}</div>
