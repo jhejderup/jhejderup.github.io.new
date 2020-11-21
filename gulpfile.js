@@ -31,13 +31,14 @@ gulp.task("bib", () => {
   return gulp
     .src("./_bibliography/**/*.bib")
     .pipe(bib2json())
-    .pipe(gulp.dest("./_data/bib"))
+    .pipe(gulp.dest("./_data"))
 
 });
 
 gulp.task("watch", () => {
   gulp.watch("./assets/css/**/*.scss", gulp.parallel("css"));
   gulp.watch("._sass/**/*.scss", gulp.parallel("css"));
+  gulp.watch("./_bibliography/**/*.bib",gulp.parallel("bib"));
 });
 
 gulp.task("build", gulp.parallel("css","bib"));
