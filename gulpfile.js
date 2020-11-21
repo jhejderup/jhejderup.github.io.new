@@ -5,11 +5,15 @@ const autoprefixer = require("gulp-autoprefixer");
 
 const through = require('through2');
 const bibtexParse = require('bibtex-parse-js');
-
+const Cite = require('citation-js')
 
 const bib2json = () => {
   return through.obj(function (vinylFile, encoding, callback) {
     let transformedFile = vinylFile.clone();
+
+    // const parsed_bib  = new Cite(transformedFile.contents.toString(),{generateGraph: false});
+    // console.log(parsed_bib.get({format: 'real',style: 'bibtex', type: 'string'}));
+    // let bibobj = bibtexParse.toJSON(parsed_bib.get({style: 'bibtex', type: 'string'}));
     let bibobj = bibtexParse.toJSON(transformedFile.contents.toString());
     transformedFile.contents = Buffer.from(JSON.stringify(bibobj));
     transformedFile.extname = ".json";
