@@ -33,6 +33,10 @@ layout: default
       {% include news.html %}
     {% endif %}
 
+    {% if selected_papers %}
+      {% include selected_papers.html %}
+    {% endif %}
+
     {% if social %}
     <div class="social">
       {% include social.html %}

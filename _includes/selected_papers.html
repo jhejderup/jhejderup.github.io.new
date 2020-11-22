@@ -1,4 +1,91 @@
 <div class="publications">
   <h2>selected publications</h2>
-  {% bibliography -f papers -q @*[selected=true]* %}
+  <ol class="bibliography">
+    {% for paper in papers %}
+    {% if paper.entryTags.selected %}
+    <li> 
+      <div class="row">
+        <div class="col-sm-2 abbr">
+        {% if paper.entryTags.abbr %}
+          <abbr class="badge">{{paper.entryTags.abbr}}</abbr>
+        {% endif %}
+        </div>
+        <div id="{{paper.citationKey}}" class="col-sm-8">
+            <div class="title">{{paper.entryTags.title}}</div>
+            <div class="author">
+              <em>{{paper.entryTags.author}}</em>
+            </div>
+
+            <div class="periodical">
+            {% if paper.entryType == "article" %}
+              <em>{{paper.entryTags.journal}}</em>
+            {% elsif paper.entryType == "inproceedings" %}
+              <em>In {{paper.entryTags.booktitle}}</em>
+            {% endif %}
+            {% if paper.entryTags.year %}
+              {{paper.entryTags.year}}
+            {% endif %}
+            </div>
+
+          <div class="links">
+          {% if paper.entryTags.abstract %}
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+          {% endif %}
+          {% if paper.entryTags.arxiv %}
+            <a href="http://arxiv.org/abs/{{ paper.entryTags.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
+          {% endif %}
+          {% if paper.entryTags.html %}
+            <a href="{{ paper.entryTags.html }}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
+          {% endif %}
+          {% if paper.entryTags.pdf %}
+            {% if paper.entryTags.pdf contains '://' %}
+            <a href="{{ paper.entryTags.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+            {% else %}
+            <a href="{{ paper.entryTags.pdf | prepend: '/assets/pdf/' | url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+            {% endif %}
+          {% endif %}
+          {% if paper.entryTags.supp %}
+            {% if paper.entryTags.supp contains '://' %}
+            <a href="{{ paper.entryTags.supp }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+            {% else %}
+            <a href="{{ paper.entryTags.supp | prepend: '/assets/pdf/' | url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+            {% endif %}
+          {% endif %}
+          {% if paper.entryTags.blog %}
+            <a href="{{ paper.entryTags.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Blog</a>
+          {% endif %}
+          {% if paper.entryTags.code %}
+            <a href="{{ paper.entryTags.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+          {% endif %}
+          {% if paper.entryTags.poster %}
+            {% if paper.entryTags.poster contains '://' %}
+            <a href="{{ paper.entryTags.poster }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
+            {% else %}
+            <a href="{{ paper.entryTags.poster | prepend: '/assets/pdf/' | url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
+            {% endif %}
+          {% endif %}
+          {% if paper.entryTags.slides %}
+            {% if paper.entryTags.slides contains '://' %}
+            <a href="{{ paper.entryTags.slides }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+            {% else %}
+            <a href="{{ paper.entryTags.slides | prepend: '/assets/pdf/' | url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+            {% endif %}
+          {% endif %}
+          {% if paper.entryTags.website %}
+            <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Website</a>
+          {% endif %}
+          </div>
+
+          <!-- Hidden abstract block -->
+          {% if paper.entryTags.abstract %}
+          <div class="abstract hidden">
+            <p>{{ paper.entryTags.abstract }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ol>
 </div>
