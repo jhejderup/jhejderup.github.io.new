@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "gulp build && gulp watch && eleventy --serve",
-    "build": "env NODE_ENV=production gulp build && npx eleventy --pathprefix 'al-folio'"
+    "build": "env NODE_ENV=production gulp build && npx eleventy --pathprefix 'jhejderup.github.io.new'"
   },
   "name": "al-folio"
 }
