@@ -1,6 +1,6 @@
 --- 
 layout: about
-title: about
+title: whoami
 permalink: /
 description: PhD Student @ TU Delft
 
