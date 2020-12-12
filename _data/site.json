@@ -10,7 +10,7 @@
     "news": true,
     "news_limit": 3,
     "highlight_theme": "vim",
-    "baseurl": "/al-folio",
+    "baseurl": "/jhejderup.github.io.new",
     "last_updated": false,
     "navbar_fixed": true,
     "footer_fixed": true,
