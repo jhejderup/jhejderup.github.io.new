@@ -8,7 +8,7 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>W4.780</p>
+    <p>Office W4.780</p>
     <p>Van Mourik Broekmanweg 6</p>
     <p>NL-2628 XE Delft</p>
 
