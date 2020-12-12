@@ -1,8 +1,8 @@
----
+--- 
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: PhD Student @ TU Delft
 
 profile:
   align: right
