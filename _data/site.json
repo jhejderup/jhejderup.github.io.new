@@ -34,7 +34,7 @@
     "enable_math": true,
     "enable_tooltips": false,
     "enable_darkmode": false,
-    "show_social_icons": false,
+    "show_social_icons": true,
     "blog_name": "jhejderup.github.io.new",
     "blog_description": "a simple whitespace theme for academics",
     "disqus_shortname": "jhejderup.github.io.new",

@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const sass = require('@selfisekai/gulp-sass');
+const sass = require('gulp-sass');
 const cssnano = require("gulp-cssnano");
 const autoprefixer = require("gulp-autoprefixer");
 
