@@ -2,7 +2,7 @@
 layout: about
 title: whoami
 permalink: /
-description: PhD Student @ TU Delft
+description: <a href="https://se.ewi.tudelft.nl/research-lines/software-analytics" class="post-description" target="_blank">Software Analytics Lab</a> • <a href="https://se.ewi.tudelft.nl" class="post-description" target="_blank">Software Engineering Research Group</a> • <a href="https://www.tudelft.nl" class="post-description" target="_blank">TU Delft</a>
 
 profile:
   align: right
@@ -14,7 +14,7 @@ profile:
 
 news: true  # includes a list of news items
 social: false  # includes social icons at the bottom of the page
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 ---
 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
